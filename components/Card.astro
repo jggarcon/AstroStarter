@@ -1,33 +1,4 @@
----
-import { Image } from "astro:assets";
-
-type Props = {
-  icon: ImageMetadata;
-  title: string;
-  description: string;
-  cardColor?: string;
-};
-
-const {
-  icon,
-  title,
-  description,
-  cardColor = "var(--card-black)",
-} = Astro.props;
----
-
-<div class="container">
-  <div class="stack-card" style={`--card-color: ${cardColor};`}>
-    <div class="icon-container">
-      <Image src={icon} alt="Icon" class="stack-icon" />
-    </div>
-    <div class="text-container">
-      <h2>{title}</h2>
-      <p>{description}</p>
-    </div>
-  </div>
-</div>
-
+<!-- add component implementation -->
 <style define:vars={{ description }}>
   .container {
     width: 100%;

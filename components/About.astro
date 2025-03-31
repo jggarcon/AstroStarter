@@ -1,29 +1,4 @@
----
-import { Image } from "astro:assets";
-import MoreInfoButton from "../components/MoreInfoButton.tsx";
-
-type InfoProps = {
-  title: string;
-  description: string;
-  buttonText: string;
-  imgSrc: ImageMetadata;
-};
-
-const { info } = Astro.props;
----
-
-<section class="who-section" id="about">
-  <div class="text-content">
-    <h2><strong>{info?.title}</strong></h2>
-    <p>{info?.description}</p>
-    <MoreInfoButton client:media="(max-width:768px)" />
-  </div>
-
-  <div class="image-content">
-    <Image src={info?.imgSrc} alt={info?.title} class="michael-img" />
-  </div>
-</section>
-
+<!-- add component implementation -->
 <style>
   .who-section {
     display: flex;

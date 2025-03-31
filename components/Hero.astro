@@ -1,24 +1,4 @@
----
-import { Image } from "astro:assets";
-
-type Props = {
-    title: string;
-    subtitle: string;
-    imgSrc: ImageMetadata;
-};
-
-const { title, subtitle, imgSrc } = Astro.props;
----
-
-<header>
-    <h1 class="title">{title}</h1>
-    <div class="secondSection">
-        <Image class="img" src={imgSrc} alt={title} />
-        <h3 class="subtitle">{subtitle}</h3>
-    </div>
-    <p class="next-section"><a href="#about">Learn more</a></p>
-</header>
-
+<!-- add component implementation -->
 <style>
     header {
         padding: 2em 0;

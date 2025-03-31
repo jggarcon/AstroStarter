@@ -1,25 +1,4 @@
----
-import Card from "../components/Card.astro";
-import rectIcon from "../assets/React-icon.svg";
-import vueIcon from "../assets/Vue-logo.svg";
-import kotlinIcon from "../assets/kotlin.svg";
-import astroIcon from "../assets/astroVertical.svg";
-
-const skills = [
-  { icon: rectIcon, title: "React", description: "Structuring the web" },
-  { icon: vueIcon, title: "Vue", description: "Styling the web" },
-  { icon: kotlinIcon, title: "Kotlin", description: "Building Apps" },
-  { icon: astroIcon, title: "Astro", description: "Innovating the web" },
-];
----
-
-<section class="skills-section" id="skills">
-  <h1>Skills</h1>
-  <div class="skills-grid">
-    {skills.map((skill) => <Card {...skill} />)}
-  </div>
-</section>
-
+<!-- add component implementation -->
 <style>
   .skills-section {
     text-align: center;

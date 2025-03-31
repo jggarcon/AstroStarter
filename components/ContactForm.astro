@@ -1,26 +1,4 @@
----
-type Props = {
-  actionUrl?: string;
-};
-
-const { actionUrl = "#" } = Astro.props;
----
-
-<form action={actionUrl} method="POST" class="contact-form">
-  <h2>Contact Me</h2>
-
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required />
-
-  <label for="phone">Phone</label>
-  <input type="tel" id="phone" name="phone" required />
-
-  <label for="message">Message</label>
-  <input type="text" id="message" name="message" required />
-
-  <button type="submit">Submit</button>
-</form>
-
+<!-- add component implementation -->
 <style>
   .contact-form {
     max-width: 750px;

@@ -1,39 +1,4 @@
----
-import Card from "../components/Card.astro";
-import phoneIcon from "../assets/phone-icon.png";
-import emailIcon from "../assets/mail-icon.png";
-import ContactForm from "../components/ContactForm.astro";
-
-const contacts = [
-  {
-    icon: phoneIcon,
-    title: "506-888-999",
-    description: "Call me",
-    cardColor: "var(--card-green)",
-  },
-  {
-    icon: emailIcon,
-    title: "michaelj@dev.com",
-    description: "Email me",
-    cardColor: "var(--card-green)",
-  },
-];
----
-
-<section class="contact-section" id="contact">
-  <h1>Let's Get in Touch</h1>
-
-  <div class="contact-container">
-    <div class="contact-form-wrapper">
-      <ContactForm actionUrl="/submit-form" />
-    </div>
-
-    <div class="contact-grid">
-      {contacts.map((contact) => <Card {...contact} />)}
-    </div>
-  </div>
-</section>
-
+<!-- add component implementation -->
 <style>
   .contact-section {
     text-align: center;
