@@ -1,0 +1,47 @@
+---
+//imports
+
+//create contacts array object
+---
+
+<!-- html --><!--  -->
+<style>
+  .contact-section {
+    text-align: center;
+    padding: 50px;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .contact-form-wrapper {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--grey-200);
+    font-size: 4em;
+  }
+
+  @media only screen and (max-width: 45em) {
+    .contact-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>

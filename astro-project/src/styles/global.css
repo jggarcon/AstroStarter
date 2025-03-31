@@ -1,0 +1,135 @@
+/*
+    We can add global CSS Like this
+    This File is directly connected with Layout.astro
+    Any styles that we want them to take effect on the whole page level
+    instead of component level we use a global css file, just like this one.
+*/
+
+:root {
+    --radius: 8px;
+}
+
+html {
+    --background: #fff;
+    --grey-200: #222222;
+    --grey-400: #444444;
+    --grey-600: #333333;
+    --grey-900: #111111;
+    --red: #a8180d;
+    --white: #f7f7f7;
+    --gold: #c79900;
+    --black: #171717;
+    --blue: #008cff;
+    --card-black: rgb(16, 120, 248);
+    --v-line: rgb(16, 120, 248);
+    --card-green: #4CAF4F;
+}
+
+html.dark {
+    --background: #212121;
+    --grey-200: #eaeaea;
+    --grey-400: #acacac;
+    --grey-600: #ffffff;
+    --grey-900: #fafafa;
+    --card-black: #000;
+    --card-green: #000;
+    --red: #a8180d;
+    --white: #171717;
+    --gold: #c79900;
+    --black: #f7f7f7;
+    --v-line: #fff;
+    --form-bg: #000
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+button[data-theme-toggle] {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.next-section {
+    position: absolute;
+    cursor: pointer;
+    top: calc(85% - 2em);
+    left: calc(10% + 1em);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--grey-200);
+    transform: rotate(-90deg);
+    z-index: 99999;
+}
+
+.next-section::after {
+    content: "";
+    position: absolute;
+    transform-origin: top top;
+    top: 50%;
+    left: auto;
+    right: calc(100% + 1em);
+    width: 4em;
+    height: .1rem;
+    background: var(--v-line);
+}
+
+.next-section a {
+    text-decoration: none;
+    color: var(--grey-200);
+}
+
+.btn {
+    cursor: pointer;
+    color: var(--white);
+    padding: 1em;
+    border: thin solid var(--v-line);
+    border-radius: var(--radius);
+    background: var(--v-line);
+}
+
+@media only screen and (max-width: 45em) {
+    .next-section {
+        position: absolute;
+        top: calc(100% + 3em);
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .next-section::after {
+        left: 50%;
+        transform: translate(-50%, 1em);
+    }
+}
+
+@media only screen and (max-width: 60em) {
+    .next-section {
+        position: absolute;
+        top: calc(100% + -25em);
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .next-section::after {
+        left: 50%;
+        transform: translate(-50%, 1em);
+    }
+}
+
+/* @media only screen and (max-width: 50em) {
+    .next-section {
+        position: absolute;
+        top: calc(100% + 3em);
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .next-section::after {
+        left: 50%;
+        transform: translate(-50%, 1em);
+    }
+} */

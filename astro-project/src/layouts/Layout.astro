@@ -1,0 +1,67 @@
+---
+import ThemeToggler from "../components/ThemeToggler.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+		<script is:inline>
+			const DARK_THEME_CLASS = "dark";
+			const COLOR_MODE = "COLOR_MODE";
+			const LIGHT_THEME = "LIGHT";
+			const DARK_THEME = "DARK";
+
+			const rootElement = document.documentElement;
+
+			const getInitialColorMode = () => {
+				const previouslySavedColorMode =
+					window.localStorage.getItem(COLOR_MODE);
+
+				if (previouslySavedColorMode) {
+					return previouslySavedColorMode;
+				}
+
+				if (window.matchMedia("prefers-color-scheme: dark").matches) {
+					return DARK_THEME;
+				}
+
+				return LIGHT_THEME;
+			};
+
+			const initialColorMode = getInitialColorMode();
+
+			const setInitialColorMode = (mode) => {
+				// set required class on the root element
+				if (mode === LIGHT_THEME) {
+					rootElement.classList.remove(DARK_THEME_CLASS);
+				} else {
+					rootElement.classList.add(DARK_THEME_CLASS);
+				}
+			};
+
+			setInitialColorMode(initialColorMode);
+		</script>
+	</head>
+	<body>
+		<ThemeToggler />
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: auto;
+		font-family: "Roboto", sans-serif;
+		background: var(--background);
+		transition: all 0.2s ease-in-out;
+	}
+</style>

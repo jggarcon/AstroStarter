@@ -1,0 +1,18 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Layout from "./Layout.astro";
+
+type Props = MarkdownLayoutProps<{
+    title: string,
+    description: string,
+}>
+const { title, description } = Astro.props.frontmatter;
+---
+
+<Layout>
+    <h2>This is my {title} skills</h2>
+    <p>
+        {description}
+    </p>
+    <slot />
+</Layout>
